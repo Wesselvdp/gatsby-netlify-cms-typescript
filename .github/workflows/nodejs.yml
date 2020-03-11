@@ -15,5 +15,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: deploy.sh
+    - run: ls -a
+    - run: scp -r text.txt cheil@141.138.139.219:/var/www/v2
 
