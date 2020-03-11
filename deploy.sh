@@ -17,6 +17,6 @@ set -e
 # # Remove our deploy_key again since it's no longer needed
 # rm $HOME/.ssh/deploy_key
 
-npm run build && scp -r text.txt cheil@141.138.139.219:/var/www/v2
+scp -r text.txt cheil@141.138.139.219:/var/www/v2
 
 # npm run build && scp -r public/* deployer@141.138.139.219:/var/www/v2
