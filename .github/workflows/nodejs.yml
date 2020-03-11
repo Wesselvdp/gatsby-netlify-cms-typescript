@@ -16,5 +16,6 @@ jobs:
 
     steps:
     - run: ls -a
-    - run: scp -r text.txt cheil@141.138.139.219:/var/www/v2
+    - run: echo ls -a
+    - run: echo "hello world"
 
