@@ -32,7 +32,7 @@ jobs:
         env:
           HOST: ${{ secrets.host }}
           USERNAME: ${{ secrets.username }}
-          KEY: ${{ secrets.deploy_token }}
+          KEY: ${{ secrets.priv }}
         with:
           source: "text.txt"
           target: "/var/www/v2"
