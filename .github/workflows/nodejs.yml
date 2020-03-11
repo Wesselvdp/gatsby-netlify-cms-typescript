@@ -31,9 +31,9 @@ jobs:
         uses: appleboy/scp-action@master
         env:
           HOST: ${{ secrets.host }}
-          PASSWORD: ${{ secrets.PASSWORD }}
+          PASSWORD: ${{ secrets.password }}
           USERNAME: ${{ secrets.username }}
-          KEY: ${{ secrets.deploy_key }}
+          KEY: ${{ secrets.deploy_token }}
         with:
           source: "text.txt"
           target: "/var/www/v2"
