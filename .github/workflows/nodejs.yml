@@ -31,7 +31,6 @@ jobs:
         uses: appleboy/scp-action@master
         env:
           HOST: ${{ secrets.host }}
-          PASSWORD: ${{ secrets.password }}
           USERNAME: ${{ secrets.username }}
           KEY: ${{ secrets.deploy_token }}
         with:
