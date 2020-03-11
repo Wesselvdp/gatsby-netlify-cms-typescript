@@ -34,7 +34,7 @@ jobs:
           USERNAME: ${{ secrets.username }}
           KEY: ${{ secrets.priv }}
         with:
-          source: "text.txt"
+          source: "public/*"
           target: "/var/www/v2"
       # - name: Deploy
       #   run: docker-compose run deploy
