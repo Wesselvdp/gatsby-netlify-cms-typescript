@@ -5,7 +5,7 @@ set -e
 
 # # Pipe our environmental SSH key variable into a file
 mkdir -p $HOME/.ssh
-echo "${deploy_key}" > $HOME/.ssh/deploy_key
+echo "${DEPLOY_KEY}" > $HOME/.ssh/deploy_key
 echo $HOME/.ssh/deploy_key
 chmod 600 $HOME/.ssh/deploy_key # SSH keys need to be readonly
 
@@ -13,11 +13,11 @@ chmod 600 $HOME/.ssh/deploy_key # SSH keys need to be readonly
 target="/var/www/v2"
 
 # # The actual rsync
-sh -c "rsync -azh -e 'ssh -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=no' public/* --rsync-path='mkdir -p ${target} && rsync' cheil@141.138.139.219:${target}"
+# sh -c "rsync -azh -e 'ssh -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=no' public/* --rsync-path='mkdir -p ${target} && rsync' cheil@141.138.139.219:${target}"
 
 # # Remove our deploy_key again since it's no longer needed
 # rm $HOME/.ssh/deploy_key
 
-# sh -c "scp -r text.txt cheil@141.138.139.219:/var/www/v2"
+sh -c "scp 'ssh -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=no' -r text.txt cheil@141.138.139.219:/var/www/v2"
 
 # npm run build && scp -r public/* deployer@141.138.139.219:/var/www/v2
