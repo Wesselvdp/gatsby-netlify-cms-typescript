@@ -18,6 +18,6 @@ target="/var/www/v2"
 # # Remove our deploy_key again since it's no longer needed
 # rm $HOME/.ssh/deploy_key
 
-sh -c "scp 'ssh -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=no' -r text.txt cheil@141.138.139.219:/var/www/v2"
+sh -c "scp -v 'ssh -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=no' -r text.txt cheil@141.138.139.219:/var/www/v2"
 
 # npm run build && scp -r public/* deployer@141.138.139.219:/var/www/v2
