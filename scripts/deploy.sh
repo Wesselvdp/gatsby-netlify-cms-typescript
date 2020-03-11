@@ -9,10 +9,10 @@ echo "${deploy_key}" > $HOME/.ssh/deploy_key
 chmod 600 $HOME/.ssh/deploy_key # SSH keys need to be readonly
 
 # Where to deploy our site on our server
-target="~/html"
+target="/var/www/v2"
 
 # The actual rsync
-sh -c "rsync -azh -e 'ssh -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=no' public/* --rsync-path='mkdir -p ${target} && rsync' <user>@<server>:${target}"
+sh -c "rsync -azh -e 'ssh -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=no' public/* --rsync-path='mkdir -p ${target} && rsync' cheil@141.138.139.219:${target}"
 
 # Remove our deploy_key again since it's no longer needed
 rm $HOME/.ssh/deploy_key
