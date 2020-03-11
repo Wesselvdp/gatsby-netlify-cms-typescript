@@ -15,5 +15,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: ./deploy.sh
+    - run: deploy.sh
 
