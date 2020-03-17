@@ -27,11 +27,40 @@ interface Story {
 const StoriesComponent = () => {
   const [width, height] = useWindowSize()
   const [stories, setStories] = useState<Story[]>([])
+  const [offset, setOffset] = useState<number>(0)
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const [pagination, setPagination] = useState<number[]>([])
+
+  const storiesLeft = allStories.length - (offset + stories.length)
+
+  // Next
+  const loadNext = (): void => {
+    const newOffset =
+      storiesLeft < stories.length
+        ? offset + storiesLeft
+        : offset + stories.length
+    setOffset(newOffset)
+  }
+  // Prev
+  const loadPrev = (): void => {
+    const newOffset = offset - stories.length < 1 ? 0 : offset - stories.length
+    setOffset(newOffset)
+  }
+  // page
+  // const loadPage = (n: number) => {
+  //   setOffset
+  // }
+
+  // Set stories on load and window width change
   useEffect(() => {
     const n = width < 600 || width > 2 * window.innerHeight ? 2 : 3
-    setStories(allStories.slice(0, n))
-    console.log('length', stories.length)
-  }, [width])
+    const paginationLength = Math.ceil(allStories.length / n)
+    setStories(allStories.slice(offset, offset + n))
+    setCurrentPage(offset / n + 1)
+
+    setPagination([...Array(paginationLength).keys()])
+    console.log('currentpage', currentPage)
+  }, [width, offset])
 
   return (
     <div>
@@ -68,6 +97,36 @@ const StoriesComponent = () => {
           )}
           {/* </template> */}
         </div>
+      </div>
+      <div className="pagination">
+        <button
+          title="Eerste pagina"
+          className="pagination__nav"
+          onClick={() => loadPrev()}
+        >
+          {'<<'}
+        </button>
+        {pagination.map((n: number) => (
+          <button
+            key={n}
+            // ariaSelected={"page === currentPageNumber ? 'true' : 'false'"
+            title={`Pagina nummer ${n}`}
+            className={
+              'pagination__item' +
+              (n + 1 === currentPage ? 'active--number' : '')
+            }
+            onClick={() => loadPage(n)}
+          >
+            {n + 1}
+          </button>
+        ))}
+        <button
+          title="Laatste pagina"
+          className="pagination__nav"
+          onClick={() => loadNext()}
+        >
+          {'>>'}
+        </button>
       </div>
     </div>
   )
