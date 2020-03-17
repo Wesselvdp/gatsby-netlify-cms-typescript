@@ -1,0 +1,71 @@
+.partners {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  .partner {
+    flex: 0 0 33%;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+
+    @media screen and (max-width: $desktop) {
+      flex: 0 0 50%;
+      padding: 5px;
+      margin-bottom: 1em;
+      min-width: 100px;
+    }
+    @media screen and (max-width: 600px) {
+      flex: 100%;
+    }
+
+    &__anchor {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    &__background {
+      border: 1px solid #eee;
+      border-radius: $border-radius;
+      background-color: #eee;
+      padding: 12px;
+      flex: 1;
+      display: flex;
+      min-height: 154px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+
+      @media screen and (max-width: $desktop) {
+        min-height: 180px;
+      }
+
+      &--ocw {
+        // min-height: initial;
+        display: block;
+        padding-top: 0;
+
+         .partner__logo {
+          margin-right: -17px;
+          transform: scale(1.25);
+          transform-origin: 50% 0;
+         }
+      }
+    }
+
+    &__logo {
+      max-width: 80%;
+      mix-blend-mode: multiply;
+
+      @media screen and (max-width: $desktop) {
+        // max-height: 75px;
+      }
+    }
+  }
+}

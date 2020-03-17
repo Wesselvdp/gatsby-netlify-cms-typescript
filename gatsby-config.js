@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     // edit below
@@ -10,6 +12,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
@@ -17,11 +20,48 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: { '@components': path.resolve(__dirname, 'src/components') },
+        extensions: [],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: { '@data': path.resolve(__dirname, 'src/utils/data') },
+        extensions: [],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: { '@hooks': path.resolve(__dirname, 'src/hooks') },
+        extensions: [],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: { '@utils': path.resolve(__dirname, 'src/utils') },
+        extensions: [],
+      },
+    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'fonts',
+        path: `${__dirname}/src/fonts/`,
       },
     },
     {
@@ -34,7 +74,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [".mdx", ".md"],
+        extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -78,12 +118,6 @@ module.exports = {
         display: `minimal-ui`,
         // edit below
         icon: `content/assets/gatsby-icon.png`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
       },
     },
   ],

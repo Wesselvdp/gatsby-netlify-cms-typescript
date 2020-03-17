@@ -1,0 +1,70 @@
+// Colors
+$main-font: #000;
+$header-heading: #fff;
+$main-color: #01689b;
+$dark-color: #154273;
+$card-font-color: #fff;
+$row-bg: #f3f3f3;
+$feature-dark: #cce0f1;
+$feature-light: #e5f0f9;
+
+// Screens
+$page-container: 1920px;
+$mobile-container: 860px;
+
+$desktop-page: "(min-width: 769px) and (max-width: 1920px)";
+// $desktop-large: "(min-width: 769px) and (max-width: 1440px)";
+$desktop-medium: "(min-width: 769px) and (max-width: 1440px)";
+$desktop-small: "(min-width: 769px) and (max-width: 1366px)";
+$tablet: "(min-width: 769px) and (max-width: 1024px)";
+$desktop: 769px;
+$desktop-large: 1200px;
+$mobile: 768px;
+$mobile-large: 480px;
+$mobile-medium: 360px;
+$mobile-small: "(max-width: 320px)";
+
+// Fonts
+$title-font: "Alfa Slab One", cursive;
+$h2-size-dt: 62px;
+$h3-size-dt: 48px;
+
+// Paddings
+$wrap-padding: 96px;
+
+// Shadows
+$mobile-heading-shadow: 2px 3px 3px rgba(0, 0, 0, 0.47);
+$card-shadow: 6px 10px 38px 0 rgba(0, 0, 0, 0.47);
+
+// Borders
+$border-radius: 12px;
+
+// Mobile padding
+$padding: 15px;
+
+// Wessel
+@mixin phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}

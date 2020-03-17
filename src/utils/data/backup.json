@@ -1,0 +1,20 @@
+{
+  "backup": [
+    {
+      "id": 1,
+      "title": "Mijn leerlingen verdienen een leraar die in hen gelooft.",
+      "author": "Ismail Aghzanay",
+      "function": "Engels Designcollege Rotterdam",
+      "url": "/verhalen/ismail-aghzanay",
+      "image": "06_Ismail"
+    },
+    {
+      "id": 2,
+      "title": "Ik gun het mijn leerlingen om fouten te maken.",
+      "author": "Daisy Mertens",
+      "function": "Groep 7 BBS De Buurvogel Helmond",
+      "url": "/verhalen/daisy-mertens",
+      "image": "01_Daisy"
+    }
+  ]
+}

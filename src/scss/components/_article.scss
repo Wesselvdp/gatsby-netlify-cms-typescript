@@ -1,0 +1,48 @@
+.article {
+  &__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+
+  &__head {
+    max-width: 700px;
+    margin: 0 auto;
+
+    blockquote {
+      font-family: inherit;
+      text-shadow: none;
+      &::before {
+        content: ''
+      }
+    }
+  }
+  
+  &__back {
+    max-width: 730px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 2.5rem;
+  }
+
+  &__title {
+    color: $main-color;
+    font-family: inherit;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    max-width: 700px;
+    // word-break: break-all;
+  }
+
+  &__body {
+    p {
+      margin: 0 auto 1em auto;
+    }
+  }
+}

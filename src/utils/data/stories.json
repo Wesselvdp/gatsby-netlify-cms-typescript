@@ -1,0 +1,58 @@
+[
+  {
+    "id": 8,
+    "title": "Ik ben er retetrots op dat ik leerkracht ben.",
+    "author": "Conrad Berghoef in Metro",
+    "function": "13 februari 2020",
+    "slug": "https://www.metronieuws.nl/in-het-nieuws/2020/02/nieuw-initiatief-moet-beeld-over-onderwijs-veranderen",
+    "image": "07_Conrad"
+  },
+  {
+    "id": 7,
+    "title": "Het is me gelukt om dat meisje zelfvertrouwen te geven",
+    "author": "Daisy Mertens in AD",
+    "function": "13 februari 2020",
+    "slug": "https://www.ad.nl/binnenland/juf-daisy-wil-weer-trots-zijn-op-haar-vak~ab8f85c6/",
+    "image": "02_Daisy"
+  },
+  {
+    "id": 1,
+    "title": "Mijn leerlingen verdienen een leraar die in hen gelooft.",
+    "author": "Ismail Aghzanay",
+    "function": "Engels Designcollege Rotterdam",
+    "slug": "/verhalen/ismail-aghzanay",
+    "image": "06_Ismail"
+  },
+  {
+    "id": 2,
+    "title": "Ik gun het mijn leerlingen om fouten te maken.",
+    "author": "Daisy Mertens",
+    "function": "Groep 7/8 BBS De Vuurvogel Helmond",
+    "slug": "/verhalen/daisy-mertens",
+    "image": "01_Daisy"
+  },
+  {
+    "id": 3,
+    "title": "Leerlingen moesten lachen en staken nog wat op ook.",
+    "author": "René Katerbarg",
+    "function": "Economie Hondsrug College Emmen",
+    "slug": "/verhalen/rene-katerbarg",
+    "image": "05_Rene"
+  },
+  {
+    "id": 4,
+    "title": "Soms is het goed om je hele leven om te gooien.",
+    "author": "Stephan van Ginneken",
+    "function": "Conciërge KSE Etten-Leurm",
+    "slug": "/verhalen/stephan-van-ginneken",
+    "image": "02_Stephan"
+  },
+  {
+    "id": 5,
+    "title": "Bewegen zorgt dat je sociaal sterker komt te staan.",
+    "author": "Christa Rietberg",
+    "function": "Docent bewegingsonderwijs De Aventurijn",
+    "slug": "/verhalen/christa-rietberg",
+    "image": "03_Christa"
+  }
+]

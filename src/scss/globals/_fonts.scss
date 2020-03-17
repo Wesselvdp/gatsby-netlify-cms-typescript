@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "RO Sans";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/RO-SansWebText-Regular.woff") format("opentype"),
+    url("/fonts/RO-SansWebText-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RO Sans";
+  font-style: italic;
+  font-weight: normal;
+  src: url("/fonts/RO-SansWebText-Italic.woff") format("opentype"),
+    url("/fonts/RO-SansWebText-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RO Sans";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/RO-SansWebText-Bold.woff") format("opentype"),
+    url("/fonts/RO-SansWebText-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RO Serif";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/RO-SerifWeb-Regular.woff") format("opentype"),
+    url("/fonts/RO-SerifWeb-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RO Serif";
+  font-style: italic;
+  font-weight: normal;
+  src: url("/fonts/RO-SerifWeb-Italic.woff") format("opentype"),
+    url("/fonts/RO-SerifWeb-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RO Icons";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/icons/ro-icons-1.12.woff") format("opentype"),
+    url("/fonts/icons/ro-icons-1.12.ttf") format("truetype");
+}

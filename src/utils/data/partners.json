@@ -1,0 +1,49 @@
+{
+  "partners": [
+    {
+      "title": "Algemene Vereniging Schoolleiders",
+      "image": "avs.png",
+      "url": "https://avs.nl/"
+    },
+    {
+      "title": "CNV Onderwijs",
+      "image": "cnv.png",
+      "url": "https://onderwijs.cnvconnectief.nl/"
+    },
+    {
+      "title": "Federatie van Onderwijsvakorganisaties",
+      "image": "fvov.png",
+      "url": "https://fvov.nl/"
+    },
+    {
+      "title": "De 4 grote gemeentes",
+      "image": "g4.png"
+    },
+    {
+      "title": "MBO Raad ",
+      "image": "mbo_raad.png",
+      "url": "https://mboraad.nl"
+    },
+    {
+      "title": "Vereniging Hogescholen",
+      "image": "vereniging_hogescholen.png",
+      "url": "https://vereniginghogescholen.nl/",
+      "style": { "transform": "translateX(10px)" }
+    },
+    {
+      "title": "Vereniging van Universiteiten",
+      "image": "vsnu.png",
+      "url": "https://vsnu.nl/"
+    },
+    {
+      "title": "PO-Raad ",
+      "image": "po_raad.png",
+      "url": "https://poraad.nl  "
+    },
+    {
+      "title": "VO-Raad ",
+      "image": "vo_raad.png",
+      "url": "https://vo-raad.nl/"
+    }
+  ]
+}
