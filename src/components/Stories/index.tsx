@@ -59,27 +59,16 @@ const StoriesComponent = () => {
   }
 
   useEffect(() => {
-    // const newBegin = currentPage - 1
-    // let begin = newBegin
-    // if (newBegin <= 1) begin = 1
-    // const end = storiesLeft <= 0 ? null : begin + 1
-    // let arr =
-    //   end === null ? [begin - 1, begin, begin + 1] : [begin, begin + 1, end + 1]
-    // console.log('arr', arr)
-    console.log('currentPage:', currentPage)
     let arr
     const startArray = [currentPage, currentPage + 1, currentPage + 2]
     const normalArray = [currentPage - 1, currentPage, currentPage + 1]
     const endArray = [currentPage - 2, currentPage - 1, currentPage]
 
     if (currentPage === 1) {
-      console.log('start')
       arr = startArray
     } else if (currentPage === pagination.length) {
-      console.log('end')
       arr = endArray
     } else {
-      console.log('middle')
       arr = normalArray
     }
     console.log('arr is', arr)
