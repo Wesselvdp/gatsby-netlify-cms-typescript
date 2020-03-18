@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { useMachine } from '@xstate/react'
+import { assign } from 'xstate'
 import useWindowSize from '@hooks/useWindowSize'
+import { paginationMachine } from '../../machines/paginationMachine'
 import StoryComponent from './Story'
 import allStories from '@utils/data/stories.json'
-
-// {
-//   "id": 4,
-//   "title": "Soms is het goed om je hele leven om te gooien.",
-//   "author": "Stephan van Ginneken",
-//   "function": "Conciërge KSE Etten-Leur",
-//   "url": "/verhalen/stephan-van-ginneken",
-//   "image": "02_Stephan"
-// },
 
 interface Story {
   id: number
@@ -26,13 +20,17 @@ interface Story {
 
 const StoriesComponent = () => {
   const [width, height] = useWindowSize()
-  const [stories, setStories] = useState<Story[]>([])
+  const [stories, setStories] = useState<Story[] | {}[]>([{}])
   const [offset, setOffset] = useState<number>(0)
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [pagination, setPagination] = useState<number[]>([])
-
+  const [paginationVisible, setPaginationVisible] = useState<number[]>([])
   const storiesLeft = allStories.length - (offset + stories.length)
+  const storiesPassed = offset + stories.length
 
+  const awayFromOffset = (offset: number) => {
+    return allStories.length - offset
+  }
   // Next
   const loadNext = (): void => {
     const newOffset =
@@ -41,26 +39,72 @@ const StoriesComponent = () => {
         : offset + stories.length
     setOffset(newOffset)
   }
+
   // Prev
   const loadPrev = (): void => {
     const newOffset = offset - stories.length < 1 ? 0 : offset - stories.length
     setOffset(newOffset)
   }
+
   // page
-  // const loadPage = (n: number) => {
-  //   setOffset
-  // }
+  const loadPage = (n: number) => {
+    console.log(`going to page ${n}`)
+    // console.log(awayFromOffset(stories.length * n) < stories.length)
+    const newOffset =
+      awayFromOffset(stories.length * n) < stories.length
+        ? offset + storiesLeft
+        : stories.length * n
+
+    setOffset(newOffset)
+  }
+
+  useEffect(() => {
+    // const newBegin = currentPage - 1
+    // let begin = newBegin
+    // if (newBegin <= 1) begin = 1
+    // const end = storiesLeft <= 0 ? null : begin + 1
+    // let arr =
+    //   end === null ? [begin - 1, begin, begin + 1] : [begin, begin + 1, end + 1]
+    // console.log('arr', arr)
+    console.log('currentPage:', currentPage)
+    let arr
+    const startArray = [currentPage, currentPage + 1, currentPage + 2]
+    const normalArray = [currentPage - 1, currentPage, currentPage + 1]
+    const endArray = [currentPage - 2, currentPage - 1, currentPage]
+
+    if (currentPage === 1) {
+      console.log('start')
+      arr = startArray
+    } else if (currentPage === pagination.length) {
+      console.log('end')
+      arr = endArray
+    } else {
+      console.log('middle')
+      arr = normalArray
+    }
+    console.log('arr is', arr)
+    setPaginationVisible(arr)
+  }, [currentPage, stories])
 
   // Set stories on load and window width change
   useEffect(() => {
     const n = width < 600 || width > 2 * window.innerHeight ? 2 : 3
-    const paginationLength = Math.ceil(allStories.length / n)
+    const pagination = [...Array(Math.ceil(allStories.length / n))]
     setStories(allStories.slice(offset, offset + n))
-    setCurrentPage(offset / n + 1)
-
-    setPagination([...Array(paginationLength).keys()])
-    console.log('currentpage', currentPage)
+    setPagination(pagination)
+    setCurrentPage(Math.floor(offset / n + 1))
   }, [width, offset])
+
+  // const [paginationState, sendToPagination] = useMachine(
+  //   paginationMachine({
+  //     pages: ,
+  //     length: 4,
+  //   })
+  // )
+
+  useEffect(() => {
+    console.log('stories', stories)
+  }, [stories])
 
   return (
     <div>
@@ -106,18 +150,17 @@ const StoriesComponent = () => {
         >
           {'<<'}
         </button>
-        {pagination.map((n: number) => (
+        {paginationVisible.map((n: number) => (
           <button
             key={n}
             // ariaSelected={"page === currentPageNumber ? 'true' : 'false'"
             title={`Pagina nummer ${n}`}
             className={
-              'pagination__item' +
-              (n + 1 === currentPage ? 'active--number' : '')
+              'pagination__item' + (n === currentPage ? ' active--number' : '')
             }
-            onClick={() => loadPage(n)}
+            onClick={() => loadPage(n - 1)}
           >
-            {n + 1}
+            {n}
           </button>
         ))}
         <button
