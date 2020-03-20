@@ -2,45 +2,40 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import { rhythm, scale } from '../utils/typography'
+import Layout from '@components/layout'
+import SEO from '@components/seo'
+import MastHead from '@components/MastHead'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
 
     return (
-      <h1>Verhaal</h1>
-      // <Layout location={this.props.location} title={siteTitle}>
-      //   <SEO
-      //     title={post.frontmatter.title}
-      //     description={post.frontmatter.description || post.excerpt}
-      //   />
-      //   <h1>{post.frontmatter.title}</h1>
-      //   <p>{post.frontmatter.date}</p>
-      //   <MDXRenderer>{post.body}</MDXRenderer>
-      //   <hr />
 
-      //   <ul>
-      //     <li>
-      //       {previous && (
-      //         <Link to={`blog${previous.fields.slug}`} rel="prev">
-      //           ← {previous.frontmatter.title}
-      //         </Link>
-      //       )}
-      //     </li>
-      //     <li>
-      //       {next && (
-      //         <Link to={`blog${next.fields.slug}`} rel="next">
-      //           {next.frontmatter.title} →
-      //         </Link>
-      //       )}
-      //     </li>
-      //   </ul>
-      // </Layout>
+      <Layout location={this.props.location} title={siteTitle}>
+        <MastHead quote={post.frontmatter.title} imageSlug={post.frontmatter.imageSlug} />
+        <SEO
+          title={post.frontmatter.title}
+          description={post.frontmatter.description || post.excerpt}
+        />
+
+        <a href="/" className="back article__back">Terug naar homepage</a>
+        <section className="padding">
+          <div className="article__head">
+            <blockquote className="non-blockquote">
+              <h1 className="article__title h2">
+                “Tijdens mijn stage had ik ineens mijn eureka-moment.”
+                {/* {post.frontmatter.title} */}
+              </h1>
+            </blockquote>
+          </div>
+
+          <div class="article__body">
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </div>
+        </section>
+      </Layout>
     )
   }
 }
