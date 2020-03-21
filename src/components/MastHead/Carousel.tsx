@@ -1,64 +1,71 @@
 import React, {FC, useEffect, useState} from 'react'
 import Slider from "react-slick"
-// import BackgroundImage from "gatsby-background-image"
 import MastImage from './MastImage'
+import MastContent from './MastContent'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import headers from '@data/headers.json'
 
-
-const Carousel: FC = ({className, children}) => {
-  const [autoplay, setAutoplay] = useState(true)
-  // const [uniqueID, setID] = useState(delay ? 1 : 2)
-  useEffect(() => {
-    setTimeout(() => {
-      setAutoplay(true)
-    }, 500)
-  }, [])
+type T = {
+  className: string,
+}
+const Carousel: FC<T> = ({className, children}) => {
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
+    arrows: false,
     speed: 500,
     slidesToShow: 1,
-    autoplay,
-    slidesToScroll: 1,
+    autoplay: false,
   }
 
-const images = [1, 2, 3]
 
-
-  const Slide = (i) => {
+  const Slide = ({ title, mobile, image }: {title: string, mobile: string, image: string}) => {
     return (
-      <div key={i} className="swiper-slide">
-        <div className="slide">
-          {/* <div className="overlay"></div> */}
-
-            <MastImage imageSlug="07_conrad" />
-          <div className="header-content">
-            {/* {{#if mobile}}
-            <blockquote className="blockquote desktop blockquote--header">
-              {{breaklines title}}”
-            </blockquote>
-            <blockquote className="blockquote mobile blockquote--header">
-              {{title}}”
-            </blockquote>
-            {{else}}
-            <blockquote className="blockquote blockquote--header">
-              {{breaklines title}}”
-            </blockquote>
-            {{/if}} */}
-          </div>
-        </div>
+      <div className="slide">
+          <MastImage className="slide" imageSlug={image} />
+          <MastContent title={title} mobile={mobile} />
       </div>
     )
   }
-
   return (
-    <Slider  {...settings} className="header-slider">
-      {images.map((el, i) => Slide(i))}
+    <Slider {...settings} className={className}>
+      {headers.map(({title, mobile, image}, index) => <Slide key={index} title={title} mobile={mobile} image={image} />)}
     </Slider>
   )
-
 }
+
+//   return (
+//     <Slider  {...settings} className="carousel">
+//       {images.map((el, i) => (
+//         <div key={i} className="">
+//           {/* <div className="overlay"></div> */}
+//           <div className="background-header background-header--story  background-header--xl"
+//             style={{backgroundImage: `url('/assets/images/verhalen/16x9_07_Corona.jpg')`}}>
+//           </div>
+//             {/* <MastImage imageSlug="07_conrad" /> */}
+//           <div className="header-content">
+//             {/* {{#if mobile}}
+//             <blockquote className="blockquote desktop blockquote--header">
+//               {{breaklines title}}”
+//             </blockquote>
+//             <blockquote className="blockquote mobile blockquote--header">
+//               {{title}}”
+//             </blockquote>
+//             {{else}}
+//             <blockquote className="blockquote blockquote--header">
+//               {{breaklines title}}”
+//             </blockquote>
+//             {{/if}} */}
+//           </div>
+//       </div>
+//       )
+
+//       )}
+//     </Slider>
+//   )
+
+// }
 
 export default Carousel

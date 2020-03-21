@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: cheilbenelux/debaanvanhetleven2
 
 media_folder: static/assets

@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from '@components/layout'
 import SEO from '@components/seo'
-import MastHead from '@components/MastHead'
+import MastHead from '@components/MastHead/Index.tsx'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -31,7 +31,7 @@ class BlogPostTemplate extends React.Component {
             </blockquote>
           </div>
 
-          <div class="article__body">
+          <div className="article__body">
             <MDXRenderer>{post.body}</MDXRenderer>
           </div>
         </section>

@@ -1,43 +1,42 @@
-{
-  "headers": [
-    {
-      "title": "Kun je met\n Pythagoras\n ook de snelste\n weg naar huis\n uitrekenen?",
-      "mobile": true,
-      "image": "Pythagoras"
-    },
-    {
-      "title": "U houdt toch\n zelf ook uw\n smartphone\n aan in de les?",
-      "image": "SmartPhone"
-    },
-    {
-      "title": "Weet u hoe\n je moet\n twerken?",
-      "image": "tWerken"
-    },
-    {
-      "title": "Geeft u ook\n rekenles aan\n vaders en\n moeders?",
-      "image": "Rekenen"
-    },
-    {
-      "title": " Hoort mijn opa\n nu ook bij de\n geschiedenis?",
-      "image": "Geschiedenis"
-    },
-    {
-      "title": "Gulden snede?\n Wanneer gaan\n we nou iets\n maken?",
-      "image": "GuldenSnede"
-    },
-    {
-      "title": "Wat moet\n ik nou\n met een\n diploma?",
-      "mobile": true,
-      "image": "Diploma"
-    },
-    {
-      "title": "Wanneer gaan\n we het nou eens\n over het klimaat\n hebben?",
-      "mobile": "Wanneer gaan we het nou eens over het klimaat hebben?",
-      "image": "Klimaat"
-    },
-    {
-      "title": "Ik kan toch niet\n presenteren\n zonder make-up?",
-      "image": "MakeUp"
-    }
-  ]
-}
+[
+  {
+    "title": "Kun je met\n Pythagoras\n ook de snelste\n weg naar huis\n uitrekenen?",
+    "mobile": true,
+    "image": "Pythagoras"
+  },
+  {
+    "title": "U houdt toch\n zelf ook uw\n smartphone\n aan in de les?",
+    "image": "SmartPhone"
+  },
+  {
+    "title": "Weet u hoe\n je moet\n twerken?",
+    "image": "tWerken"
+  },
+  {
+    "title": "Geeft u ook\n rekenles aan\n vaders en\n moeders?",
+    "image": "Rekenen"
+  },
+  {
+    "title": " Hoort mijn opa\n nu ook bij de\n geschiedenis?",
+    "image": "Geschiedenis"
+  },
+  {
+    "title": "Gulden snede?\n Wanneer gaan\n we nou iets\n maken?",
+    "image": "GuldenSnede"
+  },
+  {
+    "title": "Wat moet\n ik nou\n met een\n diploma?",
+    "mobile": true,
+    "image": "Diploma"
+  },
+  {
+    "title": "Wanneer gaan\n we het nou eens\n over het klimaat\n hebben?",
+    "mobile": "Wanneer gaan we het nou eens over het klimaat hebben?",
+    "image": "Klimaat"
+  },
+  {
+    "title": "Ik kan toch niet\n presenteren\n zonder make-up?",
+    "image": "MakeUp"
+  }
+]
+

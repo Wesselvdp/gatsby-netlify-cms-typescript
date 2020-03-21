@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 import { Link } from 'gatsby'
-
+import MastHead from '@components/MastHead/'
 import Layout from '@components/layout'
 import SEO from '@components/seo'
 import StoriesComponent from '@components/Stories'
 import partners from '@data/partners.json'
+
 
 type PageProps = {
   data: {
@@ -22,13 +23,21 @@ type PageProps = {
 }
 
 const IndexPage = ({ data }: PageProps) => {
-  console.log(partners)
+  const sloganRef = useRef<HTMLHeadingElement>(null);
+  const [mastHeight, setMastHeight] = useState(300);
+  useEffect(() => {
+    const sloganHeight = sloganRef && sloganRef.current ? sloganRef.current.offsetHeight : 0
+
+    const height = window.innerHeight - sloganHeight - 124
+    setMastHeight(height)
+  }, [sloganRef])
   return (
     <Layout>
       <>
         <SEO title="Home" />
-        <section id="intro" className="padding">
-          <h2 className="slogan">
+        <MastHead height={mastHeight} />
+        <section  id="intro" className="padding">
+          <h2 ref={sloganRef} className="slogan">
             <span className="werken">Werken in het onderwijs.</span> De baan van
             het leven.
           </h2>
@@ -48,7 +57,6 @@ const IndexPage = ({ data }: PageProps) => {
                 title="Campagne video"
                 src="https://www.youtube.com/embed/videoseries?list=PLYi8A-PLqxwrtBNuISVr4ZmYIHXOO4xje;disablekb=1"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullscreen
               ></iframe>
             </div>
           </div>
