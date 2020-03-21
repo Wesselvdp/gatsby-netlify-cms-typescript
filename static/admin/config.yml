@@ -1,9 +1,16 @@
 backend:
   name: git-gateway
-  repo: cheilbenelux/debaanvanhetleven2
+  branch: master
+  site_url: https://debaanvanhetleven.netlify.com
+  identity_url: "https://debaanvanhetleven.netlify.com/.netlify/identity"
+  gateway_url: "https://debaanvanhetleven.netlify.com/.netlify/git"
+
 
 media_folder: static/assets
 public_folder: assets
+
+logo_url: /assets/ocw-logo-black.svg
+
 
 collections:
   - name: blog
