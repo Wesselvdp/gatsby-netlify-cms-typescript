@@ -21,7 +21,7 @@ const StoryComponent: FC<StoryProps> = ({ story, size }) => {
         key="story.id"
         className={`story ${size}`}
         style={{
-          backgroundImage: `url(/assets/images/verhalen/16x9_${story.image}.jpg)`,
+          backgroundImage: `url(/assets/images/16x9_${story.image}.jpg)`,
         }}
       >
         <div className="story-content">
