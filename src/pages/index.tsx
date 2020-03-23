@@ -32,7 +32,7 @@ const IndexPage = ({ data }: PageProps) => {
     setMastHeight(height)
   }, [sloganRef])
   return (
-    <Layout>
+    <Layout className="homepage">
       <>
         <SEO title="Home" />
         <MastHead height={mastHeight} />

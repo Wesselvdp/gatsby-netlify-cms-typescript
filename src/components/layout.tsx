@@ -4,12 +4,13 @@ import React from "react"
 import Footer from "@components/Footer"
 import Header from "@components/Header"
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+
+
+const Layout = ({ children, className }: { children: React.ReactNode, className: string }) => {
   return (
     <>
       <Header />
-
-      <main>{children}</main>
+      <main className={className}>{children}</main>
       <Footer />
     </>
   )

@@ -8,7 +8,7 @@ type T = {
 const MastImage: FC<T> = ({ title, mobile}) => {
 console.log('title', title)
   return (
-    <div className="header-content header-content--article">
+    <div className="header-content">
 
               {mobile &&
               <>

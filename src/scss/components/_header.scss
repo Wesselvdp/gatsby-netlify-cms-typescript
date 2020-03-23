@@ -223,17 +223,10 @@ body .header-slider {
   }
 }
 
-.header-content {
-  // max-width: 800px;
-  // display: none;
+body .header-content {
+  height: initial;
   position: relative;
   z-index: 10;
-
-  // @media screen and (max-width: $desktop) {
-  //   max-width: 350px;
-  // }
-  // @media screen and (min-width: $desktop) and (max-width: $page-container) {
-  // }
 
   @media screen and (max-width: $mobile-large) {
     margin-top: auto;
