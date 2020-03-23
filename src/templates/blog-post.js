@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from '@components/layout'
 import SEO from '@components/seo'
-import MastHead from '@components/MastHead/Index.tsx'
+import MastHead from '@components/MastHead'
 
 class BlogPostTemplate extends React.Component {
   render() {
