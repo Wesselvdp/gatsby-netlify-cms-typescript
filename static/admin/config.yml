@@ -1,8 +1,5 @@
 backend:
   name: git-gateway
-  site_url: https://gracious-wozniak-bdc06d.netlify.com
-  identity_url: https://gracious-wozniak-bdc06d.netlify.com.netlify/identity"
-  gateway_url: https://gracious-wozniak-bdc06d.netlify.com/.netlify/git"
 
 
 media_folder: static/assets
